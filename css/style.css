@@ -71,6 +71,10 @@ button {
     color: var(--ocean);
 }
 
+.address {
+    font-style: normal;
+}
+
 .address-link {
     color: var(--text);
     font-size: 16px;
@@ -120,7 +124,7 @@ button {
     color: #FFFFFF;
 }
 
-.header-2 {
+.header-scnd {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
@@ -128,12 +132,20 @@ button {
     color: var(--text-color)
 }
 
-.header-3 {
+.header-thrd {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--text-color);
+}
+
+.section-team{
+    background-color: var(--light);
+}
+
+.section-team .img{
+    background-color: var(--white);
 }
 
 .footer-section {    
