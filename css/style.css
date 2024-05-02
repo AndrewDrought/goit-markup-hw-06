@@ -113,6 +113,10 @@ header .container {
     color: var(--light);
 }
 
+footer .title {
+    margin-bottom: 16px;
+}
+
 .nav-list {
     display: flex;
     margin-right: 76px;
@@ -215,6 +219,11 @@ header .container {
 .button:focus {
     background-color: var(--ocean);
     border: 1px solid var(--ocean);
+}
+
+.link.accent {
+    color: var(--iris);
+    text-decoration: underline;
 }
 
 .btn {    
@@ -345,7 +354,12 @@ header .container {
 footer .container {
     display: flex;
     align-items: start;
-    gap: 120px;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+footer .column:nth-child(1) {
+    max-width: 264px;
 }
 
 footer .logo {
@@ -401,6 +415,11 @@ footer .social-links {
     width: 40px;
     height: 40px;
     fill: var(--iris);
+}
+
+.button .icon {
+    flex-shrink: 0;
+    margin-left: 16px;
 }
 
 .icon {
@@ -492,37 +511,63 @@ footer .social-links .social-link:hover .icon {
     position: absolute;
     padding: 24px;
     background-color: var(--white);
-    max-width: 480px;
-    width: 50%;
-    height: 75vh;
+    width: 408px;
+    min-height: 584px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.1);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, opacity 0.25s linear;
+    opacity: 0;
 }
 
-.modal>.modal-header {
+.backdrop:not(.is-hidden) .modal {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.modal .close-button {
     display: flex;
     justify-content: end;
     margin-bottom: 24px;
+    align-self: flex-end;
+}
+
+.modal .modal-heading {
+    font-weight: 500;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
 .modal .close-button {
     border: 0;
+    background-color: transparent;
+}
+
+.modal .close-button .icons {
     width: 24px;
     height: 24px;
-    background-color: transparent;
-    background-image: url(../images/icons/icon-close.svg);
-    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image transform 250ms ease-in-out;
 }
 
-.modal .close-button::before {
+.modal .close-button .icons-close {
+    background-image: url('../images/icons/icon-close.svg');
+}
+
+/* preload hover image */
+.modal .close-button .icons-close::before {
     display: none;
-    content: url('../images/icons/icon-close-active.svg');
+    background-image: url('../images/icons/icon-close-active.svg');
 }
 
-.modal .close-button:hover,
-.modal .close-button:focus {
-    background-image: url(../images/icons/icon-close-active.svg);
+.modal .close-button:hover .icons-close,
+.modal .close-button:focus .icons-close {
+    background-image: url('../images/icons/icon-close-active.svg');
 }
 
 .form {
@@ -541,6 +586,7 @@ footer .social-links .social-link:hover .icon {
     border-color: var(--white);
     color: var(--white);
     min-width: 264px;
+    height: 40px;
 }
 
 .form.subscribe-form .form-input::placeholder {
@@ -551,8 +597,9 @@ footer .social-links .social-link:hover .icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    line-height: 1.15;
     box-shadow: none;
+    min-width: 165px;
+    height: 40px;    
 }
 
 .form.subscribe-form .button .icon {
@@ -658,9 +705,11 @@ textarea.form-input {
     background-image: url('../images/icons/checkbox-active.svg');
 }
 
-.form .actions {
-    margin-top: 24px;
+.form button {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;  
+    width: 169px;    
+    margin: 24px auto ;
+    gap: 10px;
 }
