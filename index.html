@@ -3,7 +3,7 @@
 <head>
     <title>WEBSTUDIO</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,6 +41,13 @@
                     </ul>
                 </address>
             </nav>
+            <button class="menu-toggle js-open-menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
         </div>
     </header>
     <main>
@@ -106,13 +113,22 @@
             <h2 class="header-scnd">What Are We Doing</h2>
             <ul class="projects">
                 <li class="card img">
-                    <img src="./images/img1.jpg" alt="Image 1 description" width="360" height="300">
+                    <img srcset="
+                                                ./images/projects/cms.jpg    1x,
+                                                ./images/projects/cms@2x.jpg 2x
+                                              " width="360" height="300" src="./images/projects/cms.jpg" alt="CMS" />
                 </li>
                 <li class="card img">
-                    <img src="./images/img2.jpg" alt="Image 2 description" width="360" height="300">
+                    <img srcset="
+                                                ./images/projects/bots.jpg    1x,
+                                                ./images/projects/bots@2x.jpg 2x
+                                              " width="360" height="300" src="./images/projects/bots.jpg" alt="Telegram bots" />
                 </li>
                 <li class="card img">
-                    <img src="./images/img3.jpg" alt="Image 3 description" width="360" height="300">
+                    <img srcset="
+                                                ./images/projects/apps.jpg    1x,
+                                                ./images/projects/apps@2x.jpg 2x
+                                              " width="360" height="300" src="./images/projects/apps.jpg" alt="Mobile apps" />
                 </li>
             </ul>
             </div>
@@ -122,7 +138,10 @@
             <h2 class="header-scnd">Our Team</h2>
             <ul class="team">
                 <li class="card img">
-                    <img src="./images\img4.jpg" alt="Mark Guerrero">
+                    <img srcset="
+                                      ./images/team/mark-guerrero.jpg    1x,
+                                      ./images/team/mark-guerrero@2x.jpg 2x
+                                    " width="264" height="260" src="./images/team/mark-guerrero.jpg" alt="Mark Guerrero" />
                     <div class="card-body">
                     <h3 class="header-thrd">Mark Guerrero</h3>
                     <p>Product Designer</p>
@@ -151,7 +170,10 @@
                     </div>
                 </li>
                 <li class="card img">
-                    <img src="./images\img5.jpg" alt="Tom Ford">
+                    <img srcset="
+                                      ./images/team/tom-ford.jpg    1x,
+                                      ./images/team/tom-ford@2x.jpg 2x
+                                    " width="264" height="260" src="./images/team/tom-ford.jpg" alt="Tom Ford" />
                     <div class="card-body">
                     <h3 class="header-thrd">Tom Ford</h3>
                     <p>Frontend Developer</p>
@@ -180,7 +202,10 @@
                     </div>
                 </li>
                 <li class="card img">
-                    <img src="./images\img6.jpg" alt="Camila Garcia">
+                    <img srcset="
+                                      ./images/team/camila-garcia.jpg    1x,
+                                      ./images/team/camila-garcia@2x.jpg 2x
+                                    " width="264" height="260" src="./images/team/camila-garcia.jpg" alt="Camila Garcia" />
                     <div class="card-body">
                     <h3 class="header-thrd">Camila Garcia</h3>
                     <p>Marketing</p>
@@ -209,7 +234,10 @@
                     </div>
                 </li>
                 <li class="card img">
-                    <img src="./images\img7.jpg" alt="Daniel Wilson">
+                    <img srcset="
+                                      ./images/team/daniel-wilson.jpg    1x,
+                                      ./images/team/daniel-wilson@2x.jpg 2x
+                                    " width="264" height="260" src="./images/team/daniel-wilson.jpg" alt="Daniel Wilson" />
                     <div class="card-body">
                     <h3 class="header-thrd">Daniel Wilson</h3>
                     <p>UI Designer</p>
@@ -391,7 +419,62 @@
             </div>
         </div>
     </div>
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <div class="menu-links">
+            <button class="close-button js-close-menu">
+                <span class="icons icons-close"></span>
+            </button>
+            <nav>
+                <ul class="page-nav-list-mobile">
+                    <li class="list-item current">
+                        <a href="./index.html" class="page-nav-link">Studio</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="./portfolio.html" class="page-nav-link">Portfolio</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="page-nav-link">Contacts</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <address>
+                <ul class="address-list-mobile">
+                    <li class="list-item list-item-phone">
+                        <a href="tel:+110001111111">+11 (000) 111-11-11</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="mailto:info@devstudio.com">info@devstudio.com</a>
+                    </li>
+                </ul>
+            </address>
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <svg class="icon">
+                        <use href="./images/icons.svg#icon-instagram-2"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg class="icon">
+                        <use href="./images/icons.svg#icon-twitter-2"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg class="icon">
+                        <use href="./images/icons.svg#icon-facebook-2"></use>
+                    </svg>
+                </a>
+                <a href="#" class="social-link">
+                    <svg class="icon">
+                        <use href="./images/icons.svg#icon-linkedin-2"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
     <script src="./js/modal.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </body>
 </html>
 
